@@ -65,12 +65,17 @@ Actual: The score doesn't seem to follow any logical pattern. It's hard to under
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  Every time you click a button or interact with something in a Streamlit app, the entire Python script runs again from top to bottom — that's called a "rerun." This means any regular variable you create gets reset every time. To keep data between reruns (like the secret number, score, or game status), you use st.session_state, which is like a special storage box that remembers values even when the script reruns. For example, without session state, our secret number would change every time we clicked "Submit Guess," making the game impossible to win.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+  - I want to keep using the approach of finding and documenting bugs first before trying to fix them. Playing the game, writing down what I expected vs what actually happened, and then using AI to understand the root cause made the whole debugging process much smoother and organized.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+  Next time I would review AI-generated code changes more carefully before accepting them. For example, when Copilot made changes using Agent mode, I should have looked at every red and green line in the diff more closely instead of just clicking Keep right away.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  This project showed me that AI-generated code can look correct but still have serious bugs like swapped hint messages or unnecessary type conversions. I learned that I always need to test and verify AI code myself rather than trusting it blindly.

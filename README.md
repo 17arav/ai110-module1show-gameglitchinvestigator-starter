@@ -25,14 +25,24 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Game's purpose:** This is a number guessing game built with Streamlit. The player tries to guess a secret number within a limited number of attempts, with hints guiding them higher or lower.
+- [x] **Bugs found:** Hints were inverted (saying "Go HIGHER" when guess was too high), New Game button didn't reset game state properly, secret number was sometimes converted to a string causing wrong comparisons, and the Developer Debug Info was visible to players.
+- [x] **Fixes applied:** Swapped the hint messages in check_guess, removed the string conversion of the secret number, added full state reset in the New Game handler, and refactored all game logic from app.py into logic_utils.py.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- ![Fixed Game Screenshot](demo.png)
 
 ## 🚀 Stretch Features
 
-- [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
+- [x] **Challenge 1: Advanced Edge-Case Testing** — Added pytest tests for edge cases like negative numbers, decimals, and extremely large values.
+
+![Pytest Results](pytest_results.png)
+
+- [x] **Challenge 2: Feature Expansion via Agent Mode** — Added a Guess History sidebar showing how close each guess was, and a High Score tracker that saves the best score to a file.
+
+- [x] **Challenge 3: Professional Documentation and Linting** — Added PEP 257 docstrings to all functions in logic_utils.py and fixed PEP 8 style issues using Copilot.
+
+- [x] **Challenge 4: Enhanced Game UI** — Added color-coded hints (green/yellow/red), Hot/Cold emojis, and a summary table at game end.
+
+![Enhanced UI](enhanced_ui.png)
